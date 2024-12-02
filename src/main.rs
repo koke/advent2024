@@ -1,4 +1,5 @@
 mod day1;
+mod day2;
 
 enum Mode {
     Test,
@@ -30,4 +31,9 @@ fn main() {
     day1::first(input_file_path(1, Part::First, Mode::Final));
     day1::second(input_file_path(1, Part::Second, Mode::Test));
     day1::second(input_file_path(1, Part::Second, Mode::Final));
+
+    day2::first(input_file_path(2, Part::First, Mode::Test));
+    day2::first(input_file_path(2, Part::First, Mode::Final));
+    // day2::second(input_file_path(2, Part::Second, Mode::Test));
+    // day2::second(input_file_path(2, Part::Second, Mode::Final));
 }
