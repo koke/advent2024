@@ -3,7 +3,7 @@ use std::fs::File;
 use std::io::{self, BufRead};
 use std::path::Path;
 
-pub fn first(path: String) {
+pub fn first(path: String) -> i32 {
     println!("Reading file {}", path);
     // Open the file
     let file = match File::open(Path::new(path.as_str())) {
@@ -38,9 +38,10 @@ pub fn first(path: String) {
         diff_sum += diff;
     }
     println!("Sum of differences: {}", diff_sum);
+    diff_sum
 }
 
-pub fn second(path: String) {
+pub fn second(path: String) -> i32 {
     println!("Reading file {}", path);
     // Open the file
     let file = match File::open(Path::new(path.as_str())) {
@@ -78,4 +79,20 @@ pub fn second(path: String) {
     }
 
     println!("Sum of similarities: {}", similarity_sum);
+    similarity_sum
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    #[test]
+    fn test_first() {
+        let result = first("input/day1/example1.txt".to_string());
+        assert_eq!(result, 11);
+    }
+    #[test]
+    fn test_second() {
+        let result = second("input/day1/example1.txt".to_string());
+        assert_eq!(result, 31)
+    }
 }
