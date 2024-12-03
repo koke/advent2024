@@ -34,6 +34,6 @@ fn main() {
 
     day2::first(input_file_path(2, Part::First, Mode::Test));
     day2::first(input_file_path(2, Part::First, Mode::Final));
-    // day2::second(input_file_path(2, Part::Second, Mode::Test));
-    // day2::second(input_file_path(2, Part::Second, Mode::Final));
+    day2::second(input_file_path(2, Part::Second, Mode::Test));
+    day2::second(input_file_path(2, Part::Second, Mode::Final));
 }
